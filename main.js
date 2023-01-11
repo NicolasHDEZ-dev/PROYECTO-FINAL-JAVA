@@ -36,18 +36,12 @@ form.addEventListener('submit', e=>{
         warnings += `La clave no es valida <br>`
         entrar = true
     }
-    if (entrar){
-        parrafo.innerHTML = warnings
-    } else {
-        parrafo.innerHTML = "Enviado"
-    }
+    entrar ? parrafo.innerHTML = warnings : parrafo.innerHTML = "Enviado";
 })
 
 function guardar(valor){
     let user = {email: mail.value, clave: clave.value};
-    (valor === "localStorage"); {
-        localStorage.setItem("item", JSON.stringify(user));
-    }
+    valor === "localStorage" && localStorage.setItem("item", JSON.stringify(user));
     {return user}
 }
 
@@ -55,3 +49,7 @@ form.addEventListener('submit', (e)=>{
     e.preventDefault()
     guardar("localStorage")
 })
+
+const stockNike = ["Nike Uptempo", "Nike Airmax 1"]
+const stockJordan = ["Jordan 1 Fragment", "Jordan 1 Black Toe", "Jordan 11 Concord", "Jordan 4 Bred"]
+const stockTotal = [...stockNike, ...stockJordan]

@@ -1,4 +1,4 @@
-.item-image{
+.imagen{
   height: 300px;
   width: 100%;
 }
@@ -9,7 +9,7 @@
     border-radius: 10px;
   }
 
-.item-details {
+.item-details{
     display: flex;
     justify-content: space-between;
     align-items: center;
