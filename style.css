@@ -26,3 +26,20 @@
   margin: auto;
   padding-top: 20px;
 }
+
+.cart{
+  text-decoration: none;
+  color: white;
+}
+
+.shopping-cart-image{
+  max-width: 80px;
+}
+
+.shopping-cart-header {
+  border-bottom: 1px solid #ccc;
+}
+
+.shopping-cart-items {
+  padding: 20px 0px;
+}
