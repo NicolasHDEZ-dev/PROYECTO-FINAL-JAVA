@@ -73,9 +73,18 @@ const renderCards = (arr) => {
 
     tarjetas.innerHTML += html;
 
-    actualizarBotonesComprar();   
+    const itemEnCarrito = productosEnCarrito.find(zapa => zapa.id === id); // esto es nuevo
+    if(itemEnCarrito) { 
+        document.getElementById(id).classList.add("disabled")
+        document.getElementById(id).innerText = "EN EL CARRITO"
     }
-}
+    actualizarBotonesComprar();
+}       
+}      
+        
+    
+
+
 
 fetch("./data/data.json")
 .then(res=>res.json())
@@ -113,12 +122,11 @@ const productoAgregado = productos.find(item => item.id === idBoton)
 productosEnCarrito.push(productoAgregado)
 
 
-console.log((productosEnCarrito.includes(productoAgregado)))
- 
-
 localStorage.setItem("productosdelcarrito", JSON.stringify(productosEnCarrito))
 }
 
 if(productosEnCarritoLS === productosEnCarritoLS){
     actualizarBotonesComprar()
 }
+
+

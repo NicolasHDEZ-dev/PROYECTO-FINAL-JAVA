@@ -83,7 +83,7 @@ function VaciarCart (){
 productosEnCarrito.length = 0;
 localStorage.setItem("productosdelcarrito", JSON.stringify(productosEnCarrito));
 cargarProductosCarrito()
-
+vaciadoConExito()
 }
 
 function actualizarTotal(){
@@ -100,6 +100,17 @@ btnComprar.addEventListener('click', () => {
 let turu = document.querySelector(".turu")
 
 function graciasporlacompra (){
-turu.innerText = "GRACIAS POR TU COMPRA :)"
-turu.classList.add("text-center", "m-2", "fs-2")
+    Swal.fire(
+        'Tu compra se ha realizado con exito',
+        'Muchisimas gracias por comprar!',
+        'success'
+      )
+}
+
+function vaciadoConExito(){
+    Swal.fire(
+        'Tu carrito se ha vaciado',
+        'Ve al inicio para seguir comprando',
+        'error'
+      )
 }
